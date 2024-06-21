@@ -11,3 +11,14 @@
 
 #### Schema of the practise project
 ![Schema-Project](./img.png)
+ 
+#### To install `Kubernetes`, we'll implement next steps:
+
+1. `helm repo add bitnami https://charts.bitnami.com/bitnami`
+2. `helm install kafka-local bitnami/kafka \
+--restart='Never' \
+--image docker.io/bitnami/kafka:3.3.1-debian-11-r19 \
+--namespace orders-microservice \
+--command \
+--sleep infinity`
+3. `kubectl exec --tty -i kafka-local-cliente --namespace orders-microservice -- bash`
